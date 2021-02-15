@@ -1,1 +1,1 @@
-# transcriptomics_pipeline
+# transcriptomics
