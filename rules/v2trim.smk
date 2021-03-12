@@ -1,19 +1,19 @@
 rule trimming:
     input:
-        forward_reads = "/mnt/projects/shared/transcriptome_pipeline/data/v2trim_reads/8_1.fastq",
-        reverse_reads = "/mnt/projects/shared/transcriptome_pipeline/data/v2trim_reads/8_2.fastq",
+        v2trim_in_forward = config["v2trim_in_file1"] ,
+        v2trim_in_reverse = config["v2trim_in_file2"],
     conda:
         "/home/nsorokina/snakemake/envs/v2trim.yaml"
     threads: 20
     output:
-        trimming_forward = "/home/nsorokina/snakemake/output/8.trim_1.fastq",
-        trimming_reverse = "/home/nsorokina/snakemake/output/8.trim_2.fastq",
-        statistics = "/home/nsorokina/snakemake/output/8.stats",
+        v2trim_out_forward = config["v2trim_out_file1"] ,
+        v2trim_out_reverse = config["v2trim_out_file2"],
+        v2trim_statistics = config["v2trim_out_statistics"],
     params:
-        dir = "/home/nsorokina/snakemake/output" 
+        v2trim_dir =  config["v2trim_dir"]
     shell:
-        """v2trim -1 {input.forward_reads} \
-                 -2 {input.reverse_reads} \
-                 -o {params.dir} \
+        """v2trim -1 {input.v2trim_in_forward} \
+                 -2 {input.v2trim_in_reverse} \
+                 -o {params.v2trim_dir} \
                  -t {threads} \
                  -u"""

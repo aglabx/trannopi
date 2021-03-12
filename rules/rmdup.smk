@@ -1,20 +1,20 @@
 rule clean up optical duplicates:
     input:
-        forward_reads = "/home/nsorokina/snakemake/output/8.trim_1.fastq",
-        reverse_reads = "/home/nsorokina/snakemake/output/8.trim_2.fastq",
+        v2trim_out_forward = config["v2trim_out_file1"] ,
+        v2trim_out_reverse = config["v2trim_out_file2"],
     conda:
         "/home/nsorokina/snakemake/rmdub/envs/rmdub.yaml"
     threads: 20
     output:
-        trimming_forward = "/home/nsorokina/snakemake/rmdub/output/8.rm_1.fastq",
-        trimming_reverse = "/home/nsorokina/snakemake/rmdub/output/8.rm_2.fastq",
-        statistics = "/home/nsorokina/snakemake/rmdub/output/8.rm.stats",
+        rmdup_out_forward = config["rmdup_out_file1"] ,
+        rmdup_out_reverse = config["rmdup_out_file2"],
+        rmdup_out_statistics = config["rmdup_out_statistics"] ,
     params:
-        dir = "/home/nsorokina/snakemake/rmdub/output"
+        rmdup_dir = config["rmdup_dir"] 
     shell:
-        """rmdup -1 {input.forward_reads} \
-                 -2 {input.reverse_reads} \
-                 -o {params.dir} \
+        """rmdup -1 {input.v2trim_out_forward} \
+                 -2 {input.v2trim_out_reverse} \
+                 -o {params.rmdup_dir} \
                  -t {threads} \
                  -u"""
 
