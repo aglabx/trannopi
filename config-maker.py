@@ -51,6 +51,13 @@ rmdup_out_statistics: "{outdir}/rmdup/{prefix}.rm.stats"
 #trininty
 
 #trasdecoder
+transdecoder_dir = "{outdir}/transdecoder/"
+
+transdecoder_out_cds: "{outdir}/transdecoder/{prefix}_longest_orfs.cds"
+transdecoder_out_gff3: "{outdir}/transdecoder/{prefix}_longest_orfs.gff3"
+
+transdecoder_out_pep: "{outdir}/transdecoder/{prefix}_td_input.fasta.transdecoder.pep"
+transdecoder_out_bed: "{outdir}/transdecoder/{prefix}_td_input.fasta.transdecoder.bed"
 
 #blast
 
