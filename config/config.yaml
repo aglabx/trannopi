@@ -22,9 +22,18 @@ rmdup_out_file1: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/dat
 rmdup_out_file2: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/rmdup/8.rm_2.fastq"
 rmdup_out_statistics: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/rmdup/8.rm.stats"
 
-#trininty
+#trinity
+trinity_dir: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/trinity"
 
+trinity_assembly_fasta: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/trinity/8Trinity.fasta"
 #trasdecoder
+transdecoder_dir: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/transdecoder/"
+
+transdecoder_out_cds: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/transdecoder/8_longest_orfs.cds"
+transdecoder_out_gff3: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/transdecoder/8_longest_orfs.gff3"
+
+transdecoder_out_pep: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/transdecoder/8_td_input.fasta.transdecoder.pep"
+transdecoder_out_bed: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/transdecoder/8_td_input.fasta.transdecoder.bed"
 
 #blast
 

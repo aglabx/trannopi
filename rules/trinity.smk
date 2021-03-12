@@ -16,7 +16,7 @@ rule trinity:
              --seqType fq \
              --max_memory {params.memory} \
              --left {input.trinity_in_forward} \
-             --right  {trinity_in_reverse} \
+             --right  {input.trinity_in_reverse} \
              --CPU {threads} \
              --output {params.prefix} \
              --full_cleanup \

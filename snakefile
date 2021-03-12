@@ -2,8 +2,9 @@ configfile: "config/config.yaml"
 
 rule all:
     input:
-        rmdup_outfile = config["rmdup_out_file1"]
-
+        outfile_1 = config["transdecoder_out_bed"],
+        outfile_2 = config["transdecoder_out_cds"]
+        
 rule locals:
     params:
         eggnog_db = "/mnt/projects/zilov/soft/eggnog-mapper-2.0.4-rf1/database",
@@ -19,7 +20,7 @@ rule envs:
         v2trim = "../envs/v2trim.yaml",
         rmdup = "../envs/rmdup.yaml",
         trinity = "../envs/trinity.yaml",
-        transdecoder = "../envs/transdecoder.yaml"
+        transdecoder = "../envs/transdecoder.yaml",
         fastqc = "../envs/fastqc.yaml",
         prokka = "../envs/prokka.yaml",
         blast = "../envs/blast.yaml",

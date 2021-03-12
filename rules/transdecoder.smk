@@ -1,6 +1,6 @@
 rule transdecoder_LongOrfs:
     input:
-        rules.trinity.output.trinty_assembly_fasta
+        rules.trinity.output.trinity_assembly_fasta
     conda:
         envs.transdecoder
     output:
@@ -15,7 +15,7 @@ rule transdecoder_LongOrfs:
 
 rule transdecoder_Predict:
     input:
-        "./data/td_input.fasta"
+        rules.trinity.output.trinity_assembly_fasta
     conda:
         envs.transdecoder
     output:
