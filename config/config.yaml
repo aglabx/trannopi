@@ -1,0 +1,34 @@
+
+
+# main parameters
+
+
+#v2trim
+v2trim_dir: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/v2trim/"
+
+v2trim_in_file1: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/8_1.fastq"
+v2trim_in_file2: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/8_2.fastq"
+v2trim_prefix: "8"
+
+v2trim_out_file1: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/v2trim/8.trim_1.fastq"
+v2trim_out_file2: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/v2trim/8.trim_2.fastq"
+v2trim_out_statistics: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/v2trim/8.stats"
+
+
+#rmdup
+rmdup_dir: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/rmdup/"
+
+rmdup_out_file1: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/rmdup/8.rm_1.fastq"
+rmdup_out_file2: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/rmdup/8.rm_2.fastq"
+rmdup_out_statistics: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/rmdup/8.rm.stats"
+
+#trininty
+
+#trasdecoder
+
+#blast
+
+#eggnog
+
+
+    

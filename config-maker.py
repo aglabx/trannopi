@@ -18,7 +18,7 @@ def main(forward_read, reverse_read, outdir):
     
     config_file = "./config/config.yaml"
     
-    prefix = os.path.basename(forward_read).split(".")[0]
+    prefix = os.path.basename(forward_read).split(".")[0].split("_")[0]
     
     config = f"""
 
@@ -26,7 +26,7 @@ def main(forward_read, reverse_read, outdir):
 
 
 #v2trim
-v2trim_dir = "{outdir}/v2trim/"
+v2trim_dir: "{outdir}/v2trim/"
 
 v2trim_in_file1: "{forward_read}"
 v2trim_in_file2: "{reverse_read}"
@@ -38,18 +38,16 @@ v2trim_out_statistics: "{outdir}/v2trim/{prefix}.stats"
 
 
 #rmdup
-rmdup_dir = "{outdir}/rmdup/"
-
-rmdup_in_file1: "{forward_read}"
-rmdup_in_file2: "{reverse_read}"
-rmdup_prefix: "{prefix}"
+rmdup_dir: "{outdir}/rmdup/"
 
 rmdup_out_file1: "{outdir}/rmdup/{prefix}.rm_1.fastq"
 rmdup_out_file2: "{outdir}/rmdup/{prefix}.rm_2.fastq"
 rmdup_out_statistics: "{outdir}/rmdup/{prefix}.rm.stats"
 
-#trininty
+#trinity
+trinity_dir = "{outdir}/trinity"
 
+trinity_assembly_fasta: "{outdir}/trinity/{prefix}Trinity.fasta"
 #trasdecoder
 transdecoder_dir = "{outdir}/transdecoder/"
 
@@ -79,8 +77,8 @@ if __name__ == '__main__':
     args = vars(parser.parse_args())
     
     
-    forward_read = args["forward_read"]
-    reverse_read = args["reverse_read"]
-    outdir = args["workdir"]
+    forward_read = os.path.abspath(args["forward_read"])
+    reverse_read = os.path.abspath(args["reverse_read"])
+    outdir = os.path.abspath(args["outdir"])
 
     main(forward_read, reverse_read, outdir)
