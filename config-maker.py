@@ -34,9 +34,19 @@ v2trim_prefix: "{prefix}"
 
 v2trim_out_file1: "{outdir}/v2trim/{prefix}.trim_1.fastq"
 v2trim_out_file2: "{outdir}/v2trim/{prefix}.trim_2.fastq"
+v2trim_out_statistics: "{outdir}/v2trim/{prefix}.stats"
 
 
 #rmdup
+rmdup_dir = "{outdir}/rmdup/"
+
+rmdup_in_file1: "{forward_read}"
+rmdup_in_file2: "{reverse_read}"
+rmdup_prefix: "{prefix}"
+
+rmdup_out_file1: "{outdir}/rmdup/{prefix}.rm_1.fastq"
+rmdup_out_file2: "{outdir}/rmdup/{prefix}.rm_2.fastq"
+rmdup_out_statistics: "{outdir}/rmdup/{prefix}.rm.stats"
 
 #trininty
 
