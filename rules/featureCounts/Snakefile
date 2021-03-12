@@ -1,0 +1,8 @@
+rule featureCounts:
+    input:
+        file_1 = "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/featureCounts/aligned_reads.bam",
+	file_2 = "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/featureCounts/annotation.gtf"
+    output:	
+        out = "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/featureCounts/featureCounts.txt"
+    shell:
+        """ featureCounts -a {input.file_2} -t exon -g transcript_id -o {output} {input.file_1} """

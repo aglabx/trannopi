@@ -1,0 +1,12 @@
+rule transdecoder2blast:
+    input:
+        fasta = "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/blast/Trinity.fasta",
+        hmm_out = "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/hmmer/pfam.domtblout",
+        blastp_out = "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/blast/blastp.outfmt6"
+    conda:
+        "/home/sryaxovsky/transcriptomics_pipeline/envs/transdecoder.yaml"
+    params: 
+        out_dir = "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/TransDecoder2blast",
+        tool = "/home/sryaxovsky/miniconda3/bin/TransDecoder.Predict"
+    shell:
+        """ TransDecoder.Predict -t {input.fasta} --retain_pfam_hits {input.hmm_out} --retain_blastp_hits {input.blastp_out} -O {params.out_dir} """          
