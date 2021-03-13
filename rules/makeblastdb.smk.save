@@ -1,0 +1,4 @@
+rule makeblastdb
+	
+	input:
+		fasta = "Trinity.fasta.transdecoder.pep
