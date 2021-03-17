@@ -24,6 +24,8 @@ def main(forward_read, reverse_read, outdir):
 
 # main parameters
 
+# databases
+eggnog_db: "/mnt/projects/databases/eggnog_db/"
 
 #v2trim
 v2trim_dir: "{outdir}/v2trim/"
@@ -60,7 +62,11 @@ transdecoder_out_bed: "{outdir}/transdecoder/{prefix}_td_input.fasta.transdecode
 #blast
 
 #eggnog
+eggnog_dir: "{outdir}/eggnog/"
+eggnog_prefix: "{prefix}"
 
+eggnog_out_annotation: "{outdir}/eggnog/{prefix}.emapper.annotations"
+eggnog_out_orthologs: "{outdir}/eggnog/{prefix}.emapper.seed_orthologs"
 
     """
 
