@@ -2,6 +2,8 @@
 
 # main parameters
 
+# databases
+eggnog_db: "/mnt/projects/databases/eggnog_db/"
 
 #v2trim
 v2trim_dir: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/v2trim/"
@@ -38,6 +40,10 @@ transdecoder_out_bed: "/media/eternus1/nfs/projects/shared/transcriptome_pipelin
 #blast
 
 #eggnog
+eggnog_dir: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/eggnog/"
+eggnog_prefix: "8"
 
+eggnog_out_annotation: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/eggnog/8.emapper.annotations"
+eggnog_out_orthologs: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/eggnog/8.emapper.seed_orthologs"
 
     
