@@ -27,7 +27,7 @@ def main():
     print(command)
     os.system(command)
     #Snakemake
-    command = f"snakemake --cores {threads} --use-conda {snake_debug}"
+    command = f"snakemake --cores {threads} --use-conda --conda-frontend mamba {snake_debug}"
     print(command)
     os.system(command)
         
