@@ -2,24 +2,27 @@ configfile: "config/config.yaml"
 
 rule all:
     input:
-        results_file = config["results_file"]
+        outfile_1 = config["eggnog_out_annotation"],
+        outfile_2 = config["eggnog_out_orthologs"],
+
 
 rule locals:
     params:
-        rmdub = "tools/rmdub/rmdup.exe",
-        eggnog_db = "/mnt/projects/zilov/soft/eggnog-mapper-2.0.4-rf1/database",
+        eggnog_db = "/mnt/projects/databases/eggnog_db/",
         blast_db = "/mnt/projects/shared/ncbi/blast/db/nt",
 
 # set all locals s variable
-locals = rules.tools.params
+locals = rules.locals.params
 
 
 rule envs:
     params:
-	#all_tools from envs folder
-	tool_name = "../envs/tool.yaml"
-	v2trim = "../envs/v2trim.yaml",
-	rmdub = "../envs/rmdub.yaml",
+        #all_tools from envs folder
+        v2trim = "../envs/v2trim.yaml",
+        rmdup = "../envs/rmdup.yaml",
+        trinity = "../envs/trinity.yaml",
+        transdecoder = "../envs/transdecoder.yaml",
+        eggnog = "../envs/eggnog.yaml",
         fastqc = "../envs/fastqc.yaml",
         prokka = "../envs/prokka.yaml",
         blast = "../envs/blast.yaml",
@@ -31,9 +34,15 @@ envs = rules.envs.params
 # trimming reads
 include: "rules/v2trim.smk"
 # clean up reads from optical duplicates
-include: "rules/rmdub.smk"
+include: "rules/rmdup.smk"
+# trinity
+include: "rules/trinity.smk"
+#transdecoder
+include: "rules/transdecoder.smk"
+#eggnog
+include: "rules/eggnog.smk"
 #......
 # last step
-include: "rules/last_step.smk"
+#include: "rules/last_step.smk"
 
 

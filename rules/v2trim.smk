@@ -3,7 +3,7 @@ rule trimming:
         v2trim_in_forward = config["v2trim_in_file1"] ,
         v2trim_in_reverse = config["v2trim_in_file2"],
     conda:
-        "/home/nsorokina/snakemake/envs/v2trim.yaml"
+        envs.v2trim
     threads: 20
     output:
         v2trim_out_forward = config["v2trim_out_file1"] ,
@@ -15,5 +15,5 @@ rule trimming:
         """v2trim -1 {input.v2trim_in_forward} \
                  -2 {input.v2trim_in_reverse} \
                  -o {params.v2trim_dir} \
-                 -t {threads} \
-                 -u"""
+                 -t {threads}
+                 """
