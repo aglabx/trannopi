@@ -24,6 +24,8 @@ def main(forward_read, reverse_read, outdir):
 
 # main parameters
 
+# databases
+eggnog_db: "/mnt/projects/databases/eggnog_db/"
 
 #v2trim
 v2trim_dir: "{outdir}/v2trim/"
@@ -58,10 +60,26 @@ transdecoder_out_gff3: "{outdir}/transdecoder/{prefix}_longest_orfs.gff3"
 transdecoder_out_pep: "{outdir}/transdecoder/{prefix}_td_input.fasta.transdecoder.pep"
 transdecoder_out_bed: "{outdir}/transdecoder/{prefix}_td_input.fasta.transdecoder.bed"
 
+#bwa_index
+bwa_dir = "{outdir}/bwa_samtools/"
+bwa_index_output: "{outdir}/trinity/{prefix}.amb"
+
+#bwa_map
+bwa_dir = "{outdir}/bwa_samtools/"
+bwa_map_sam: "{outdir}/bwa_samtools/{prefix}.sam"
+
+#samtools
+samtools_dir = "{outdir}/bwa_samtools/"
+samtools_bam: "{outdir}/bwa_samtools/{prefix}.bam"
+
 #blast
 
 #eggnog
+eggnog_dir: "{outdir}/eggnog/"
+eggnog_prefix: "{prefix}"
 
+eggnog_out_annotation: "{outdir}/eggnog/{prefix}.emapper.annotations"
+eggnog_out_orthologs: "{outdir}/eggnog/{prefix}.emapper.seed_orthologs"
 
     """
 

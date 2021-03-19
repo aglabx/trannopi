@@ -1,20 +1,22 @@
 rule eggnog:
     conda:
-        "../envs/eggnog.yaml"
+        envs.eggnog
     threads:
-        60
+        20
     input:
-        pep_file = "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/eggnog/Trinity.fasta.transdecoder.pep"
+        transdec_pep_file = rules.transdecoder_Predict.output.td_out_pep
     output:
-        eggnog_output = "/home/pchesnokova/eggnog_snakemake/emapp_trinity_pep.emapper.annotations"
+        eggnog_out_annotation = config["eggnog_out_annotation"], 
+        eggnog_out_orthologs = config["eggnog_out_orthologs"],
     params:
-        eggnog_db = "/mnt/projects/databases/eggnog_db/"
+        eggnog_db = config["eggnog_db"],
+        eggnog_prefix = config["eggnog_prefix"],
     shell:
         """
         emapper.py \
-                    -i {input.pep_file} \
+                    -i {input.transdec_pep_file} \
                     --data_dir {params.eggnog_db} \
-                    --output {output.eggnog_output} \ 
+                    --output {params.eggnog_prefix} \ 
                     -m diamond \
                     --cpu {threads}
         """
