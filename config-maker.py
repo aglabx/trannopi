@@ -46,10 +46,11 @@ rmdup_out_statistics: "{outdir}/rmdup/{prefix}.rm.stats"
 
 #trinity
 trinity_dir: "{outdir}/trinity"
-
-trinity_assembly_fasta: "{outdir}/trinity/{prefix}Trinity.fasta"
+trinity_output_assembly: "{outdir}/trinity.Trinity.fasta"
+trinity_output_genemap: "{outdir}/trinity.Trinity.fasta.gene_trans_map"
+trinity_assembly_fasta: "{outdir}/trinity/{prefix}.Trinity.fasta"
 #trasdecoder
-transdecoder_dir: "{outdir}/transdecoder/"
+transdecoder_dir: "{outdir}/transdecoder"
 
 transdecoder_out_cds: "{outdir}/transdecoder/{prefix}_longest_orfs.cds"
 transdecoder_out_gff3: "{outdir}/transdecoder/{prefix}_longest_orfs.gff3"
