@@ -3,7 +3,7 @@ configfile: "config/config.yaml"
 rule all:
     input:
         outfile_1 = config["transdecoder_out_bed"],
-        outfile_2 = config["transdecoder_out_cds"]
+#        outfile_2 = config["transdecoder_out_cds"]
         
 rule locals:
     params:
