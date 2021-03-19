@@ -24,10 +24,11 @@ rmdup_out_statistics: "/media/eternus1/nfs/projects/shared/transcriptome_pipelin
 
 #trinity
 trinity_dir: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/trinity"
-
-trinity_assembly_fasta: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/trinity/8Trinity.fasta"
+trinity_output_assembly: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/trinity.Trinity.fasta"
+trinity_output_genemap: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/trinity.Trinity.fasta.gene_trans_map"
+trinity_assembly_fasta: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/trinity/8.Trinity.fasta"
 #trasdecoder
-transdecoder_dir: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/transdecoder/"
+transdecoder_dir: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/transdecoder"
 
 transdecoder_out_cds: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/transdecoder/8_longest_orfs.cds"
 transdecoder_out_gff3: "/media/eternus1/nfs/projects/shared/transcriptome_pipeline/data/raw_data/transdecoder/8_longest_orfs.gff3"
